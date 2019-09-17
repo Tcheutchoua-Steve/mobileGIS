@@ -1,1 +1,70 @@
-<h1>Hello Tcheutchoua Steve </h1>
+<html>
+<head>
+  <title>Firebase Login</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="user_div" >
+  <nav  class="navbar navbar-light bg-light">
+    <label id="user_para"></label>
+    <button class="float-right" onclick="logout()">Logout</button>
+  </nav>
+   <div class="main-div">
+    <input type="password" placeholder="Password..." id="" />
+    <form>
+      <div class="form-group main-div">
+        <label for="exampleInputEmail1">Name</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Phone Number</label>
+        <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Phone number">
+      </div>
+ 
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    </div>
+  </div>
+  
+  <div id="login_div" class="main-div">
+    <h3 class="text-center">Login/Signup into Dla GIS Tool</h3>
+    <input type="email" placeholder="Email..." id="email_field" />
+    <input type="password" placeholder="Password..." id="password_field" />
+
+    <button onclick="login()">Login to Account</button>
+    <br> Don't have an account? 
+    <br> <br>
+    <button onclick="signUp()">Sign Up</button>
+    <br/>
+    <button onclick="location.href='./details.php';">Go directly</button>
+  </div>
+
+
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+const config = {
+    apiKey: "AIzaSyC11mTUJ0TdZIDctB1VwQ-m2Rt_oEuvvvA",
+    authDomain: "rosy-griffin-228411.firebaseapp.com",
+    databaseURL: "https://rosy-griffin-228411.firebaseio.com",
+    projectId: "rosy-griffin-228411",
+    storageBucket: "rosy-griffin-228411.appspot.com",
+    messagingSenderId: "147862235797",
+    appId: "1:147862235797:web:435af3890f4050ed"
+  };
+    firebase.initializeApp(config);
+  </script>
+  <script src="index.js">
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>  
+  </script>
+
+</body>
+</html>

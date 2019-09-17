@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome to Dla GIS</title>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <style type="text/css">
+            body {
+              margin: 0;
+              padding: 0;
+              background-color: #17a2b8;
+              height: 100vh;
+            }
+            #login .container #login-row #login-column #login-box {
+              margin-top: 120px;
+              max-width: 600px;
+              height: 320px;
+              border: 1px solid #9C9C9C;
+              background-color: #EAEAEA;
+            }
+            #login .container #login-row #login-column #login-box #login-form {
+              padding: 20px;
+            }
+            #login .container #login-row #login-column #login-box #login-form #register-link {
+              margin-top: -85px;
+            }
+        </style>
+    </head>
+<body>
+  <div class="col-md-4 offset-md-3">
+      <h2>Fill this to notify administration</h2>
+          <div class="alert"></div>
+      <h3 id="message"></h3>
+      <br>
+    <div class="main-div">
+    <form id="registrationform" action="" method="POST">
+      <div class="form-group main-div">
+        <label for="exampleInputEmail1">Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Phone Number</label>
+        <input type="number" class="form-control" name="phone_number" id="phone_number" placeholder="Phone number">
+      </div>
+      <div class="custom-file">
+        <input type="file" name="imageFile" value="" id="imageFile" class="custom-file-input" accept="image/*" capture="camera" >
+        <label class="custom-file-label" for="validatedCustomFile">Choose Image file...</label>
+      </div>
+      <label id="imageUploadStatus"></label>
+      <input type="hidden" name="imageString" value="" id="imageString" >
+      <input type="hidden" name="audioString" value="" id="audioString" >
+      <div class="form-group">
+        <input type="hidden" class="form-control" id="latitude" name="latitude" >
+      </div>
+      <div class="form-group">
+        <input type="hidden" class="form-control" id="longitude" name="longitude" >
+      </div>
+      <div class="custom-file">
+        <input type="file"  id="audioFile" value="" class="custom-file-input" name="audioFile" accept="audio/*" capture="microphone">
+        <label class="custom-file-label" for="validatedCustomFile">Choose/Record Image file...</label>
+      </div>
+      <label id="audioUploadStatus"></label>
+     <div class="form-group">
+        <label for="exampleFormControlTextarea1" >Additional Information</label>
+        <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+      </div>   
+      <div class="row justify-content-center">
+        <button type="submit" class="btn btn-primary" sendMessage()>Send to API</button>
+      </div>
+    </form>
+    </div>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+
+  <script>
+
+    // Initialize Firebase
+const config = {
+    apiKey: "AIzaSyC11mTUJ0TdZIDctB1VwQ-m2Rt_oEuvvvA",
+    authDomain: "rosy-griffin-228411.firebaseapp.com",
+    databaseURL: "https://rosy-griffin-228411.firebaseio.com",
+    projectId: "rosy-griffin-228411",
+    storageBucket: "rosy-griffin-228411.appspot.com",
+    messagingSenderId: "147862235797",
+    appId: "1:147862235797:web:435af3890f4050ed"
+  };
+    firebase.initializeApp(config);
+  </script>
+  <script src="details.js">
+<script> window.$ = window.jQuery = require('jquery'); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>  
+  </script>
+
+</body>
+</html>
