@@ -12,12 +12,13 @@
   .getElementById('registrationform')
   .addEventListener('submit', formSubmit);
 
-  let storageRef = firebase.storage().ref('images/')
+ 
   let fileUpload = document.getElementById("imageFile")
-
+  console.log(fileUpload);
   fileUpload.addEventListener('change', function(evt) {
       let firstFile = evt.target.files[0]; // upload the first file only
-      let uploadTask = storageRef.put(firstFile);
+
+      let uploadTask = firebase.storage().ref('/images/'+firstFile.name).put(firstFile);
 
       // Listen for state changes, errors, and completion of the upload.
       uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
@@ -52,6 +53,7 @@
             break;
         }
       }, function() {
+        console.log(firstFile);
         // Upload completed successfully, now we can get the download URL
         uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
           imageString.value = downloadURL;
@@ -60,11 +62,10 @@
       });
   })
 
-    let storageRefAudio = firebase.storage().ref('audios/')
     let fileUploadAudio = document.getElementById("audioFile")
   fileUploadAudio.addEventListener('change', function(evt) {
       let firstFile = evt.target.files[0]; // upload the first file only
-      let uploadTask = storageRefAudio.put(firstFile);
+      let uploadTask = firebase.storage().ref('/audios/'+firstFile.name).put(firstFile);
 
       // Listen for state changes, errors, and completion of the upload.
       uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
